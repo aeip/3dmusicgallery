@@ -6,16 +6,20 @@
 - [add your deployment link]()
 
 ## Project Description
-
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This React app is going to be a 3D art gallery using three.js. The user will start off in front of a computer screen where they must search for a music artist. Once the song is submitted, they will walk away from the computer and see the artist they just searched for's album art along the walls. The user can then walk up to an album art and click/tap on it and get a preview of the song.
 
 ## API
-itunes.apple.com/search?term=larry+june?alt=json
-Use this section to include info about the API you have chosen and a code snippet of the data that it returns and is required for your project. 
+[iTunes API](itunes.apple.com/search?term=larry+june?alt=json). You give it a search term like an artist name, album, song, etc and it returns data about it such as the song, album, artist, artwork url, and preview url. API doesn't use a key but requires for you to select country code.
 
 
 ```
-{data: {} }
+{
+ "resultCount":1,
+ "results": [
+{"wrapperType":"track", "kind":"song", "artistId":268269988, "collectionId":1532112332, "trackId":1532112640, "artistName":"Cookin Soul & Larry June", "collectionName":"Orange Season (Deluxe Edition)", "trackName":"The P Vitamin C", "collectionCensoredName":"Orange Season (Deluxe Edition)", "trackCensoredName":"The P Vitamin C", "artistViewUrl":"https://music.apple.com/us/artist/cookin-soul/268269988?uo=4", "collectionViewUrl":"https://music.apple.com/us/album/the-p-vitamin-c/1532112332?i=1532112640&uo=4", "trackViewUrl":"https://music.apple.com/us/album/the-p-vitamin-c/1532112332?i=1532112640&uo=4", 
+"previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/81/8b/76/818b763f-8cb6-fc8e-4a14-84c543a976c9/mzaf_4583673478409297141.plus.aac.p.m4a", "artworkUrl30":"https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/a2/d2/58a2d253-712e-79e4-3bac-6c341cd171fb/source/30x30bb.jpg", "artworkUrl60":"https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/a2/d2/58a2d253-712e-79e4-3bac-6c341cd171fb/source/60x60bb.jpg", "artworkUrl100":"https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/a2/d2/58a2d253-712e-79e4-3bac-6c341cd171fb/source/100x100bb.jpg", "collectionPrice":6.93, "trackPrice":0.99, "releaseDate":"2020-09-09T12:00:00Z", "collectionExplicitness":"explicit", "trackExplicitness":"explicit", "discCount":1, "discNumber":1, "trackCount":7, "trackNumber":7, "trackTimeMillis":179200, "country":"USA", "currency":"USD", "primaryGenreName":"Hip-Hop/Rap", "contentAdvisoryRating":"Explicit", "isStreamable":true}]
+}
+
 ```
 
 
