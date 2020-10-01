@@ -9,7 +9,7 @@
 This React app is going to be a 3D art gallery using three.js. The user will start off in front of a computer screen where they must search for a music artist. Once the song is submitted, they will walk away from the computer and see the artist they just searched for's album art along the walls. The user can then walk up to an album art and click/tap on it and get a preview of the song.
 
 ## API
-[iTunes API](itunes.apple.com/search?term=larry+june?alt=json). You give it a search term like an artist name, album, song, etc and it returns data about it such as the song, album, artist, artwork url, and preview url. API doesn't use a key but requires for you to select country code.
+[iTunes API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). You give it a search term like an artist name, album, song, etc and it returns data about it such as the song, album, artist, artwork url, and preview url. API doesn't use a key but requires for you to select country code. I'd prefer to use Apple's MusicKit API because it has a lot more data per song, but that requires a developer subscription that I no longer have. With the iTunes API, I am able to get all the neccessary details to make a pretty good MVP.
 
 
 ```
