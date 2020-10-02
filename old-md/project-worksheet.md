@@ -6,7 +6,7 @@
 - [add your deployment link]()
 
 ## Project Description
-This React app is going to be a 3D art gallery using three.js. The user will start off in front of a computer screen where they must search for a music artist. Once the song is submitted, they will walk away from the computer and see the artist they just searched for's album art along the walls. The user can then walk up to an album art and click/tap on it and get a preview of the song.
+This React app is going to be a 3D art gallery using three.js. The user will start off in front of a computer screen where they must search for a music artist. Once the song is submitted, they will walk away from the computer and see the artist they just searched for's album art along the walls. The user can then walk up to an album art and click/tap on it and get a preview of the song. It is important to include a controls overlay so that mobile users can interact with the app. The three.js library doesn't seem like it would be too hard to learn and use in a short amount of time. From what I've seen from tutorials and documentation, three.js handles a lot of the 3d logic and I would just have to find out how to use each property it includes and customize them for my app. Getting data from iTunes api is pretty straightforward and I've used it before so I am pretty familiar with it. 
 
 ## API
 [iTunes API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). You give it a search term like an artist name, album, song, etc and it returns data about it such as the song, album, artist, artwork url, and preview url. API doesn't use a key but requires for you to select country code. I'd prefer to use Apple's MusicKit API because it has a lot more data per song, but that requires a developer subscription that I no longer have. With the iTunes API, I am able to get all the neccessary details to make a pretty good MVP.
@@ -27,22 +27,33 @@ This React app is going to be a 3D art gallery using three.js. The user will sta
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
-- [add link to your react architecture]()
+- [Desktop 1](https://res.cloudinary.com/drurxtkll/image/upload/v1601653677/Desktop_1_uspkqq.png)
+- [Desktop 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653682/Desktop_2_kdfiu8.png)
+- [Mobile 1](https://res.cloudinary.com/drurxtkll/image/upload/v1601653684/Mobile_1_uq6txz.png)
+- [Mobile 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653688/Mobile_2_vkvb4i.png)
+- [React Architecture](https://docs.google.com/drawings/d/1mdgNDYmSB9LszA4IJpxa0L8F5vB_l0iBQ3yUOeI5q-c/edit?usp=sharing)
 
 
 ### MVP/PostMVP - 5min
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+#### MVP
+- Use data from iTunes API to display images, links, and playable song previews
+- Use three.js and get 3d objects to render.
+- Get 3d world to have basic infrastructure. 
+- Display album art on walls
+- Allow user to interact with the computer terminal to search a song.
+- Display all components on mobile and have mobile controls.
 
-#### PostMVP EXAMPLE
+#### PostMVP
 
-- Add localStorage or firebase for storage
+- Make everything look professional in 3d world
+- Download/design and display textures for the 3d world.
+- Allow user to walk around 3d art gallery.
+- Display more data under album art image
+- Possibly organize the data in another way from what is returned (for example if 3 song results are on the same album, it will all be on the same wall).
+- Display more objects in art gallery (for example, red rope, red carpet, tables, chairs, etc).
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
@@ -51,21 +62,34 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Description | 
 | --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| App | Load 3d world | 
+| Art gallery Walls | This will render walls inside the art gallery | 
+| Computer terminal/user input | Display computer terminal in 3d world in front of user and take the user input for artist name and send to child components| 
+| Other Objects on screen | Grouped up in separate components for each object. This will display the objects that are just there for show and visuals | 
+| Controls for mobile | This component will be overlayed on top of 3d world that allows the user to press/tap buttons and move around the art gallery | 
+| iTunes API component | This component will retrieve data from the iTunes api, interpret it, create easy to read variables and pass them down to the necessary components to use. | 
+| Album art and song data | This will display the album art on the walls as well as other song data (if time permits). A router can be used to display album art so that only that part of the app has to re-render as re-rendering the whole 3d world could use a lot of processing power. | 
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Set up react app and component structure | H | 1hrs| hrs | hrs |
+| Setting up 3d world | H | 2.5hrs| hrs | hrs |
+| Display controls | H | 1hrs| hrs | hrs |
+| Render computer for input | M | 1hrs| hrs | hrs |
+| Take input, search api, and read data | H | 3hrs| hrs | hrs |
+| Create walls for art gallery | M | 2hrs| hrs | hrs |
+| Display art on walls | M | 3hrs| hrs | hrs |
+| Play music from user event | M | 3hrs| hrs | hrs |
+| Allow user to move around freely | L | 3hrs| hrs | hrs |
+| Deploy on netlify | H | 2hrs| hrs | hrs |
+| Styling 3d world to look professional | L | 4hrs| hrs | hrs |
+| Total | H | 27.5hrs| hrs | hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ three.js - js library for making 3d environments, react-three-fiber - helps three.js render faster and render only necessary parts. 
 
 ## Code Snippet
 
