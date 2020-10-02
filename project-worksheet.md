@@ -27,8 +27,11 @@ This React app is going to be a 3D art gallery using three.js. The user will sta
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
-- [add link to your react architecture]()
+- [Desktop 1](https://res.cloudinary.com/drurxtkll/image/upload/v1601653677/Desktop_1_uspkqq.png)
+- [Desktop 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653682/Desktop_2_kdfiu8.png)
+- [Mobile 1](https://res.cloudinary.com/drurxtkll/image/upload/v1601653684/Mobile_1_uq6txz.png)
+- [Mobile 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653688/Mobile_2_vkvb4i.png)
+- [add link to your react architecture](https://docs.google.com/drawings/d/1mdgNDYmSB9LszA4IJpxa0L8F5vB_l0iBQ3yUOeI5q-c/edit?usp=sharing)
 
 
 ### MVP/PostMVP - 5min
