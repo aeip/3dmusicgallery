@@ -3,7 +3,7 @@
 ## Project Links
 
 - [Github Repo](https://github.com/aeip/react-app)
-- [add your deployment link]()
+- [Deployed Website](https://pedantic-heyrovsky-5e88ea.netlify.app/)
 
 ## Project Description
 This React app is going to be a 3D art gallery using three.js. The user will start off in front of a computer screen where they must search for a music artist. Once the song is submitted, they will walk away from the computer and see the artist they just searched for's album art along the walls. The user can then walk up to an album art and click/tap on it and get a preview of the song. It is important to include a controls overlay so that mobile users can interact with the app. The three.js library doesn't seem like it would be too hard to learn and use in a short amount of time. From what I've seen from tutorials and documentation, three.js handles a lot of the 3d logic and I would just have to find out how to use each property it includes and customize them for my app. Getting data from iTunes api is pretty straightforward and I've used it before so I am pretty familiar with it. 
