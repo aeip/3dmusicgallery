@@ -89,7 +89,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Total | H | 27.5hrs| hrs | hrs |
 
 ## Additional Libraries
- three.js, react-three-fiber, 
+ three.js - js library for making 3d environments, react-three-fiber - helps three.js render faster and render only necessary parts. 
 
 ## Code Snippet
 
