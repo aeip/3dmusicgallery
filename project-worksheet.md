@@ -75,16 +75,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Set up react app and component structure | 1H | hrs| hrs | hrs |
-| Setting up 3d world | 2.5H | hrs| hrs | hrs |
-| Display controls | 1H | hrs| hrs | hrs |
-| Render computer for input | 1H | hrs| hrs | hrs |
-| Take input, search api, and read data | 3H | hrs| hrs | hrs |
-| Create walls for art gallery | 2H | hrs| hrs | hrs |
-| Display art on walls | 3H | hrs| hrs | hrs |
-| Play music from user event | 3H | hrs| hrs | hrs |
-| Allow user to move around freely | 3H | hrs| hrs | hrs |
-| Deploy on netlify | 2H | hrs| hrs | hrs |
+| Set up react app and component structure | H | 1hrs| hrs | hrs |
+| Setting up 3d world | H | 2.5hrs| hrs | hrs |
+| Display controls | H | 1hrs| hrs | hrs |
+| Render computer for input | M | 1hrs| hrs | hrs |
+| Take input, search api, and read data | H | 3hrs| hrs | hrs |
+| Create walls for art gallery | M | 2hrs| hrs | hrs |
+| Display art on walls | M | 3hrs| hrs | hrs |
+| Play music from user event | M | 3hrs| hrs | hrs |
+| Allow user to move around freely | L | 3hrs| hrs | hrs |
+| Deploy on netlify | H | 2hrs| hrs | hrs |
 | Total | 23.5H | hrs| hrs | hrs |
 
 ## Additional Libraries
