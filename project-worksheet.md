@@ -31,7 +31,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - [Desktop 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653682/Desktop_2_kdfiu8.png)
 - [Mobile 1](https://res.cloudinary.com/drurxtkll/image/upload/v1601653684/Mobile_1_uq6txz.png)
 - [Mobile 2](https://res.cloudinary.com/drurxtkll/image/upload/v1601653688/Mobile_2_vkvb4i.png)
-- [add link to your react architecture](https://docs.google.com/drawings/d/1mdgNDYmSB9LszA4IJpxa0L8F5vB_l0iBQ3yUOeI5q-c/edit?usp=sharing)
+- [React Architecture](https://docs.google.com/drawings/d/1mdgNDYmSB9LszA4IJpxa0L8F5vB_l0iBQ3yUOeI5q-c/edit?usp=sharing)
 
 
 ### MVP/PostMVP - 5min
