@@ -75,9 +75,17 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Set up react app and component structure | 1H | hrs| hrs | hrs |
+| Setting up 3d world | 2.5H | hrs| hrs | hrs |
+| Display controls | 1H | hrs| hrs | hrs |
+| Render computer for input | 1H | hrs| hrs | hrs |
+| Take input, search api, and read data | 3H | hrs| hrs | hrs |
+| Create walls for art gallery | 2H | hrs| hrs | hrs |
+| Display art on walls | 3H | hrs| hrs | hrs |
+| Play music from user event | 3H | hrs| hrs | hrs |
+| Allow user to move around freely | 3H | hrs| hrs | hrs |
+| Deploy on netlify | 2H | hrs| hrs | hrs |
+| Total | 23.5H | hrs| hrs | hrs |
 
 ## Additional Libraries
  three.js, react-three-fiber, 
