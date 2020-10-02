@@ -62,9 +62,13 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Description | 
 | --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| App | Load 3d world | 
+| Art gallery Walls | This will render walls inside the art gallery | 
+| Computer terminal/user input | Display computer terminal in 3d world in front of user and take the user input for artist name and send to child components| 
+| Other Objects on screen | Grouped up in separate components for each object. This will display the objects that are just there for show and visuals | 
+| Controls for mobile | This component will be overlayed on top of 3d world that allows the user to press/tap buttons and move around the art gallery | 
+| iTunes API component | This component will retrieve data from the iTunes api, interpret it, create easy to read variables and pass them down to the necessary components to use. | 
+| Album art and song data | This will display the album art on the walls as well as other song data (if time permits). A router can be used to display album art so that only that part of the app has to re-render as re-rendering the whole 3d world could use a lot of processing power. | 
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
@@ -76,7 +80,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Total | H | 6hrs| 5hrs | 5hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ three.js, react-three-fiber, 
 
 ## Code Snippet
 
