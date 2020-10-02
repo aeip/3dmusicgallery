@@ -38,14 +38,22 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+#### MVP
+- Use data from iTunes API to display images, links, and playable song previews
+- Use three.js and get 3d objects to render.
+- Get 3d world to have basic infrastructure. 
+- Display album art on walls
+- Allow user to interact with the computer terminal to search a song.
+- Display all components on mobile and have mobile controls.
 
-#### PostMVP EXAMPLE
+#### PostMVP
 
-- Add localStorage or firebase for storage
+- Make everything look professional in 3d world
+- Download/design and display textures for the 3d world.
+- Allow user to walk around 3d art gallery.
+- Display more data under album art image
+- Possibly organize the data in another way from what is returned (for example if 3 song results are on the same album, it will all be on the same wall).
+- Display more objects in art gallery (for example, red rope, red carpet, tables, chairs, etc).
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
