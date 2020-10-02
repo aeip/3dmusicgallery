@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* Three js styles */
+body {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
