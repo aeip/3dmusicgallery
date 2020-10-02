@@ -85,7 +85,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Play music from user event | M | 3hrs| hrs | hrs |
 | Allow user to move around freely | L | 3hrs| hrs | hrs |
 | Deploy on netlify | H | 2hrs| hrs | hrs |
-| Total | 23.5H | hrs| hrs | hrs |
+| Total | H | 23.5hrs| hrs | hrs |
 
 ## Additional Libraries
  three.js, react-three-fiber, 
