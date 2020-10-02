@@ -85,7 +85,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Play music from user event | M | 3hrs| hrs | hrs |
 | Allow user to move around freely | L | 3hrs| hrs | hrs |
 | Deploy on netlify | H | 2hrs| hrs | hrs |
-| Styling 3d world to look professional | H | 4hrs| hrs | hrs |
+| Styling 3d world to look professional | L | 4hrs| hrs | hrs |
 | Total | H | 27.5hrs| hrs | hrs |
 
 ## Additional Libraries
