@@ -11,6 +11,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-three-fiber": "^5.0.3",
     "three": "^0.121.1"
   },
   "scripts": {
