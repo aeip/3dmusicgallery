@@ -10,7 +10,7 @@ const Gallery = () => {
 // Set variables
 var camera, scene, renderer, controls;
 var objects = [];
-var raycaster;
+var raycaster, mouse;
 var moveForward = false;
 var moveBackward = false;
 var moveLeft = false;
@@ -44,29 +44,6 @@ function init() {
 
 	// Set controls
 	controls = new PointerLockControls(camera, document.body);
-
-	// Lock controls when it loads.
-	window.onload = function () {
-		var blocker = document.getElementById('blocker');
-		var instructions = document.getElementById('instructions');
-		instructions.addEventListener(
-			'click',
-			function () {
-				controls.lock();
-			},
-			false
-		);
-
-		controls.addEventListener('lock', function () {
-			instructions.style.display = 'none';
-			blocker.style.display = 'none';
-		});
-
-		controls.addEventListener('unlock', function () {
-			blocker.style.display = 'block';
-			instructions.style.display = '';
-		});
-	};
 
 	// Add controls
 	scene.add(controls.getObject());
@@ -149,6 +126,7 @@ function init() {
 		0,
 		10
 	);
+	mouse = new THREE.Vector2();
 
 	// Set up the floor
 	var geometry = new THREE.PlaneGeometry(500, 500, 0, 0);
@@ -163,16 +141,106 @@ function init() {
 
 	// Map for walls
 	let wallArr = [
-		1, 2, 2, 2, 2, 2, 2, 2, 2, 1,
-		1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-		1, 0, 0, 0, 0, 0, 0, 1, 0, 1,
-		1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
-		1, 0, 0, 0, 2, 1, 0, 0, 0, 1,
-		1, 0, 0, 0, 2, 1, 0, 0, 0, 1,
-		1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
-		1, 0, 0, 0, 0, 0, 0, 1, 0, 1,
-		1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-		1, 2, 2, 2, 2, 2, 2, 2, 2, 1,
+		1,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		2,
+		1,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		2,
+		1,
+		0,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		1,
+		1,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		2,
+		1,
 	];
 
 	// Setting up walls
@@ -234,6 +302,46 @@ function init() {
 
 	// Check if window size changes
 	window.addEventListener('resize', onWindowResize, false);
+
+	// Lock controls when it loads.
+	window.onload = function () {
+		document.addEventListener('click', onClick, false);
+		var blocker = document.getElementById('blocker');
+		var instructions = document.getElementById('instructions');
+		instructions.addEventListener(
+			'click',
+			function () {
+				controls.lock();
+			},
+			false
+		);
+
+		controls.addEventListener('lock', function () {
+			instructions.style.display = 'none';
+			blocker.style.display = 'none';
+		});
+
+		controls.addEventListener('unlock', function () {
+			blocker.style.display = 'block';
+			instructions.style.display = '';
+		});
+	};
+}
+
+// Detects what user clicks on
+function onClick(event) {
+	event.preventDefault();
+
+	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+	mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+	raycaster.setFromCamera(mouse, camera);
+
+	var intersects = raycaster.intersectObjects(scene.children, true);
+
+	if (intersects.length > 0) {
+		console.log('Intersection:', intersects[0]);
+	}
 }
 
 // Update vr window if size changes
