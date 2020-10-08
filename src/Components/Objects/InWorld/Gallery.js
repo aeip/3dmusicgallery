@@ -143,60 +143,148 @@ const Gallery = () => {
 
 		// Map for walls
 		let wallArr = [
-    1, 2, 2, 2, 2, 2, 2, 2, 2, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 3, 0, 3, 0, 3, 0, 3, 0, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 3, 3, 3, 3, 3, 3, 3, 0, 1,
-    1, 3, 3, 3, 3, 3, 3, 3, 0, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 3, 0, 3, 0, 3, 0, 3, 0, 1,
-    1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-    1, 2, 2, 2, 2, 2, 2, 2, 2, 1,
-];
+			1,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			1,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			1,
+			1,
+			3,
+			0,
+			3,
+			0,
+			3,
+			0,
+			3,
+			0,
+			1,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			1,
+			1,
+			3,
+			3,
+			3,
+			3,
+			3,
+			3,
+			3,
+			0,
+			1,
+			1,
+			3,
+			3,
+			3,
+			3,
+			3,
+			3,
+			3,
+			0,
+			1,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			1,
+			1,
+			3,
+			0,
+			3,
+			0,
+			3,
+			0,
+			3,
+			0,
+			1,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			1,
+			1,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			1,
+		];
 
 		const loader = new THREE.TextureLoader();
-				function createWalls(data) {
-					for (let x = 0; x < 10; x++) {
-						for (let y = 0; y < 10; y++) {
-							if (wallArr[10 * x + y] === 1 || wallArr[10 * x + y] === 2) {
-								// const loader = new THREE.TextureLoader();
+		function createWalls(data) {
+			for (let x = 0; x < 10; x++) {
+				for (let y = 0; y < 10; y++) {
+					if (wallArr[10 * x + y] === 1 || wallArr[10 * x + y] === 2) {
+						// const loader = new THREE.TextureLoader();
 
-								var wall = new THREE.Mesh(
-									new THREE.CubeGeometry(100, 50, 15),
-									new THREE.MeshBasicMaterial({
-										color: 0x000000,
-									})
-								);
-								if (wallArr[10 * x + y] === 2) {
-									wall.rotation.y = Math.PI / 2;
-									wall.position.set(x * 50, 25, y * 50);
-								} else {
-									wall.position.set(x * 50, 25, y * 50);
-								}
-								scene.add(wall);
-							} else if (wallArr[10 * x + y] === 3) {
-								let randomIndex = Math.floor(
-									Math.random() * data.results.length
-								);
-								console.log(data.results[randomIndex].artworkUrl100);
-								let texture = new THREE.TextureLoader().load(
-									data.results[randomIndex].artworkUrl100
-								);
-
-								var wall = new THREE.Mesh(
-									new THREE.CubeGeometry(50, 50, 50),
-									new THREE.MeshBasicMaterial({
-										map: texture,
-									})
-								);
-								wall.position.set(x * 50, 25, y * 50);
-								scene.add(wall);
-							}
+						var wall = new THREE.Mesh(
+							new THREE.CubeGeometry(100, 50, 15),
+							new THREE.MeshBasicMaterial({
+								color: 0x000000,
+							})
+						);
+						if (wallArr[10 * x + y] === 2) {
+							wall.rotation.y = Math.PI / 2;
+							wall.position.set(x * 50, 25, y * 50);
+						} else {
+							wall.position.set(x * 50, 25, y * 50);
 						}
+						scene.add(wall);
+					} else if (wallArr[10 * x + y] === 3) {
+						let randomIndex = Math.floor(Math.random() * data.results.length);
+						let texture = new THREE.TextureLoader().load(
+							data.results[randomIndex].artworkUrl100
+						);
+
+						var wall = new THREE.Mesh(
+							new THREE.CubeGeometry(50, 50, 50),
+							new THREE.MeshBasicMaterial({
+								map: texture,
+							})
+						);
+						wall.previewUrl = data.results[randomIndex].previewUrl;
+						wall.position.set(x * 50, 25, y * 50);
+						scene.add(wall);
 					}
-					// Setting up walls
-				};
+				}
+			}
+			// Setting up walls
+		}
 
 		// Adding Computer object
 		var gltfLoader = new GLTFLoader();
@@ -262,22 +350,22 @@ const Gallery = () => {
 			});
 		};
 		function itunesSearch(input) {
-		let searchTerm = input.split(' ').join('+');
-		const url =
-			'https://itunes.apple.com/search?term=' +
-			searchTerm +
-			'&country=US&media=music&limit=50';
-		const fetchURL = async (url) => {
-			const res = await fetch(url);
-			const data = await res.json();
-			artistData = await data;
-			createWalls(await data);
-		};
-		fetchURL(url);
-	}
+			let searchTerm = input.split(' ').join('+');
+			const url =
+				'https://itunes.apple.com/search?term=' +
+				searchTerm +
+				'&country=US&media=music&limit=50';
+			const fetchURL = async (url) => {
+				const res = await fetch(url);
+				const data = await res.json();
+				artistData = await data;
+				createWalls(await data);
+			};
+			fetchURL(url);
+		}
 	}
 
-
+	var audio = new Audio();
 	// Detects what user clicks on
 	function onClick(event) {
 		event.preventDefault();
@@ -297,6 +385,9 @@ const Gallery = () => {
 			) {
 				UpdateHandleInput();
 			} else {
+				audio.pause();
+				audio = new Audio(intersects[0].object.previewUrl);
+				audio.play();
 				// let randomIndex = Math.floor(Math.random() * artistData.results.length)
 				// var texture = new THREE.TextureLoader().load(
 				// 	artistData.results[randomIndex].artworkUrl100
