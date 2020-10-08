@@ -1,24 +1,14 @@
 import React from 'react';
 import './App.css';
 import Gallery from './Components/Objects/InWorld/Gallery'
+import Instructions from './Components/Objects/InWorld/Instructions'
 
 
 function App() {
   return (
 		<div className='App'>
 			<Gallery />
-			<div id='blocker'>
-				<div id='instructions'>
-					<span>Click to play</span>
-					<br />
-					<br />
-					Move: WASD
-					<br />
-					Jump: SPACE
-					<br />
-					Look: MOUSE
-				</div>
-			</div>
+			<Instructions />
 		</div>
 	);
 }
