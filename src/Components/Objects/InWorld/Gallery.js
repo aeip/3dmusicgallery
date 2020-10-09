@@ -316,17 +316,6 @@ const Gallery = () => {
 			document.addEventListener('click', onClick, false);
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
-			var search = document.getElementById('search');
-			search.addEventListener(
-				'touchend',
-				(e) => {
-					alert(e.target.value);
-					itunesSearch(e.target.value);
-					controls.lock();
-					e.target.value = '';
-				},
-				false
-			);
 
 			instructions.addEventListener(
 				'keypress',
