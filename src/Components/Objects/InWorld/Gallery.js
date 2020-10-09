@@ -316,42 +316,19 @@ const Gallery = () => {
 			document.addEventListener('click', onClick, false);
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
-			// instructions.addEventListener(
-			// 	'focusout',
-			// 	(e) => {
-			// 		itunesSearch(e.target.value);
-			// 		controls.lock();
-			// 		e.target.value = '';
-			// 	},
-			// 	false
-			// );
-			function focusInHandler(event) {
-				Event.element(event).fire('focus:in');
-			}
-			function focusOutHandler(event) {
-				Event.element(event).fire('focus:out');
-			}
-
-			if (document.addEventListener) {
-				document.addEventListener('focus', focusInHandler, true);
-				document.addEventListener('blur', focusOutHandler, true);
-			} else {
-				document.observe('focusin', focusInHandler);
-				document.observe('focusout', focusOutHandler);
-			}
-
-			document.observe('focus:in', function (event) {
-				console.log('focus:in');
-			});
-
-			document.observe('focus:in', function (event) {
-				console.log('focus:out');
-				itunesSearch(event.target.value);
-				controls.lock();
-				event.target.value = '';
-			});
 			instructions.addEventListener(
-				'keypress', (e) => {
+				'focusout',
+				(e) => {
+					itunesSearch(e.target.value);
+					controls.lock();
+					e.target.value = '';
+				},
+				false
+			);
+
+			instructions.addEventListener(
+				'keypress',
+				(e) => {
 					if (e.key === 'Enter') {
 						itunesSearch(e.target.value);
 						controls.lock();
@@ -375,7 +352,8 @@ const Gallery = () => {
 			const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 			let searchTerm = input.split(' ').join('+');
 			const url =
-				proxyUrl + 'https://itunes.apple.com/search?term=' +
+				proxyUrl +
+				'https://itunes.apple.com/search?term=' +
 				searchTerm +
 				'&country=US&media=music&limit=50';
 			const fetchURL = async (url) => {
@@ -485,8 +463,7 @@ const Gallery = () => {
 	init();
 	animate();
 
-	return <div id='floater'>
-	</div>;
+	return <div id='floater'></div>;
 };
 
 export default Gallery;
