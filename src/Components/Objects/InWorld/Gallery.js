@@ -319,7 +319,7 @@ const Gallery = () => {
 			instructions.addEventListener(
 				'touchend',
 				(e) => {
-					alert('touched');
+					alert(e.target.value);
 					itunesSearch(e.target.value);
 					controls.lock();
 					e.target.value = '';
