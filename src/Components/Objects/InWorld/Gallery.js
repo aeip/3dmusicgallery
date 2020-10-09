@@ -317,9 +317,8 @@ const Gallery = () => {
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
 			instructions.addEventListener(
-				'touchstart',
+				'touchend',
 				(e) => {
-					alert('works');
 					itunesSearch(e.target.value);
 					controls.lock();
 					e.target.value = '';
