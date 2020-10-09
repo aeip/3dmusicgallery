@@ -317,7 +317,7 @@ const Gallery = () => {
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
 			instructions.addEventListener(
-				'focusout',
+				'touchend',
 				(e) => {
 					e.preventDefault();
 					itunesSearch(e.target.value);
