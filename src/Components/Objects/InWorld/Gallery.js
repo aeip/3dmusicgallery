@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js';
 import floorImage from './Floor.png';
 import wallImage from './wall.jpg';
 import laptop from './out.glb';
-import API from '../../API';
 
 const Gallery = () => {
 	// Set variables
@@ -20,7 +19,6 @@ const Gallery = () => {
 	var prevTime = performance.now();
 	var velocity = new THREE.Vector3();
 	var direction = new THREE.Vector3();
-	var artistData = {};
 
 	function init() {
 		// Set up camera view
@@ -249,10 +247,9 @@ const Gallery = () => {
 		function createWalls(data) {
 			for (let x = 0; x < 10; x++) {
 				for (let y = 0; y < 10; y++) {
+					var wall;
 					if (wallArr[10 * x + y] === 1 || wallArr[10 * x + y] === 2) {
-						// const loader = new THREE.TextureLoader();
-
-						var wall = new THREE.Mesh(
+						wall = new THREE.Mesh(
 							new THREE.CubeGeometry(100, 50, 15),
 							new THREE.MeshBasicMaterial({
 								color: 0x000000,
@@ -271,7 +268,7 @@ const Gallery = () => {
 							data.results[randomIndex].artworkUrl100
 						);
 
-						var wall = new THREE.Mesh(
+						wall = new THREE.Mesh(
 							new THREE.CubeGeometry(50, 50, 50),
 							new THREE.MeshBasicMaterial({
 								map: texture,
@@ -358,7 +355,6 @@ const Gallery = () => {
 			const fetchURL = async (url) => {
 				const res = await fetch(url);
 				const data = await res.json();
-				artistData = await data;
 				createWalls(await data);
 			};
 			fetchURL(url);
