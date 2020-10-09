@@ -73,14 +73,6 @@ const Gallery = () => {
 
 				case 32: // space
 					if (canJump === true) velocity.y += 350;
-					console.log(
-						'x ' +
-							camera.position.x +
-							' y ' +
-							camera.position.y +
-							' z ' +
-							camera.position.z
-					);
 					canJump = false;
 					break;
 				default:
