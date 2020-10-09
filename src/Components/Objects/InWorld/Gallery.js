@@ -243,6 +243,7 @@ const Gallery = () => {
 			1,
 		];
 
+		// Setting up walls
 		const loader = new THREE.TextureLoader();
 		function createWalls(data) {
 			for (let x = 0; x < 10; x++) {
@@ -280,7 +281,6 @@ const Gallery = () => {
 					}
 				}
 			}
-			// Setting up walls
 		}
 
 		// Adding Computer object
@@ -347,9 +347,10 @@ const Gallery = () => {
 			});
 		};
 		function itunesSearch(input) {
+			const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 			let searchTerm = input.split(' ').join('+');
 			const url =
-				'https://itunes.apple.com/search?term=' +
+				proxyUrl + 'https://itunes.apple.com/search?term=' +
 				searchTerm +
 				'&country=US&media=music&limit=50';
 			const fetchURL = async (url) => {
@@ -384,13 +385,6 @@ const Gallery = () => {
 				audio.pause();
 				audio = new Audio(intersects[0].object.previewUrl);
 				audio.play();
-				// let randomIndex = Math.floor(Math.random() * artistData.results.length)
-				// var texture = new THREE.TextureLoader().load(
-				// 	artistData.results[randomIndex].artworkUrl100
-				// );
-				// intersects[0].object.material = new THREE.MeshBasicMaterial({
-				// 	map: texture,
-				// });
 			}
 		}
 	}
