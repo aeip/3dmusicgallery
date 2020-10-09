@@ -375,7 +375,6 @@ const Gallery = () => {
 		var intersects = raycaster.intersectObjects(scene.children, true);
 
 		if (intersects.length > 0) {
-			console.log('Intersection:', intersects[0]);
 			if (
 				intersects[0].object.name === 'Frame_ComputerFrame_0' ||
 				intersects[0].object.name === 'Screen_ComputerScreen_0'

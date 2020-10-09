@@ -1,4 +1,5 @@
 import React from 'react'
+import Search from './Search'
 
 const Instructions = () => {
     return (
@@ -10,9 +11,7 @@ const Instructions = () => {
 					<br />
 					Look: MOUSE
                     <br />
-					<div className='search'>
-						<input id='search' name='search' type='text' placeholder='Artist' />
-					</div>
+					<Search />
 				</div>
 			</div>
 		);
