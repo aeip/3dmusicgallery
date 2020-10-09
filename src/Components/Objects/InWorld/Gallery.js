@@ -319,6 +319,7 @@ const Gallery = () => {
 			instructions.addEventListener(
 				'focusout',
 				(e) => {
+					e.preventDefault();
 					itunesSearch(e.target.value);
 					controls.lock();
 					e.target.value = '';
