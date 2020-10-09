@@ -316,7 +316,8 @@ const Gallery = () => {
 			document.addEventListener('click', onClick, false);
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
-			instructions.addEventListener(
+			var search = document.getElementById('search');
+			search.addEventListener(
 				'touchend',
 				(e) => {
 					alert(e.target.value);
