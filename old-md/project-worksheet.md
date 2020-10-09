@@ -154,4 +154,4 @@ function createWalls(data) {
 # Fixed problem from netlify
 
 Netlify was saying that I could not use the api link for some reason halfway through the project and I found the following solution which runs the api through a proxy so that it can be used on any site.
-([Resolution]https://stackoverflow.com/questions/61951713/problem-with-cors-policy-when-making-a-request-to-https-newsapi-org)
+[Resolution](https://stackoverflow.com/questions/61951713/problem-with-cors-policy-when-making-a-request-to-https-newsapi-org)
