@@ -319,6 +319,7 @@ const Gallery = () => {
 			instructions.addEventListener(
 				'blur',
 				(e) => {
+					alert('works');
 					itunesSearch(e.target.value);
 					controls.lock();
 					e.target.value = '';
