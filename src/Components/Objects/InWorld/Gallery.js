@@ -324,6 +324,11 @@ const Gallery = () => {
 			document.addEventListener('click', onClick, false);
 			var blocker = document.getElementById('blocker');
 			var instructions = document.getElementById('instructions');
+			instructions.addEventListener('blur', function (e) {
+				itunesSearch(e.target.value);
+				controls.lock();
+				e.target.value = '';
+			},false);
 			instructions.addEventListener(
 				'keypress',
 				function (e) {
@@ -460,7 +465,8 @@ const Gallery = () => {
 	init();
 	animate();
 
-	return <div id='floater'></div>;
+	return <div id='floater'>
+	</div>;
 };
 
 export default Gallery;
